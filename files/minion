@@ -1,0 +1,13 @@
+master: salt.0x2a.io
+hash_type: sha512
+grains_refresh_every: 5
+
+schedule:
+  highstate:
+    function: state.apply
+    seconds: 1200
+    splay: 120
+  pillar:
+    function: saltutil.refresh_pillar
+    seconds: 1200
+    splay: 120
